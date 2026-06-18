@@ -35,7 +35,7 @@ The agent should identify the task type, select relevant skills/tools, and avoid
 The repository image was prepared from this image-generation prompt:
 
 ```text
-Create a clean flat tutorial infographic for a skill named "ALL-IN-ONE" that routes an AI coding assistant task to relevant skills, plugins, connectors, and tools. Use a wide landscape left-to-right flow: "User Task" -> "ALL-IN-ONE Router" -> "Relevant Skills" and "Plugins / Tools" -> "Safe Action". Add the subtitle "Route first, then act". Use a white background, charcoal text, blue and green accents, small amber highlights. No brand logos, no watermarks, no clutter.
+Create a clean flat bilingual English + Simplified Chinese tutorial infographic for a skill named "ALL-IN-ONE". Show a wide left-to-right flow: "1 User Task / 用户任务" -> "2 Analyze / 分析" -> "3 Select Capabilities / 选择能力" with two branches "Relevant Skills / 相关 Skills" and "Plugins / Tools / 插件 / 工具" -> "4 Safe Action / 安全执行". Add the subtitle "Route first, then act / 先路由，再执行". Include guardrails: "Use only what the task needs / 只启用任务所需能力" and "Never claim unavailable tools / 不假装工具可用". Use a white background, charcoal text, blue and green accents, amber for plugins/tools. No brand logos, no watermarks, no clutter.
 ```
 
 ## 中文
@@ -73,5 +73,5 @@ Agent 应该识别任务类型，选择相关能力，并避免加载无关能�
 本仓库配图基于以下 image-generation prompt 设计：
 
 ```text
-Create a clean flat tutorial infographic for a skill named "ALL-IN-ONE" that routes an AI coding assistant task to relevant skills, plugins, connectors, and tools. Use a wide landscape left-to-right flow: "User Task" -> "ALL-IN-ONE Router" -> "Relevant Skills" and "Plugins / Tools" -> "Safe Action". Add the subtitle "Route first, then act". Use a white background, charcoal text, blue and green accents, small amber highlights. No brand logos, no watermarks, no clutter.
+Create a clean flat bilingual English + Simplified Chinese tutorial infographic for a skill named "ALL-IN-ONE". Show a wide left-to-right flow: "1 User Task / 用户任务" -> "2 Analyze / 分析" -> "3 Select Capabilities / 选择能力" with two branches "Relevant Skills / 相关 Skills" and "Plugins / Tools / 插件 / 工具" -> "4 Safe Action / 安全执行". Add the subtitle "Route first, then act / 先路由，再执行". Include guardrails: "Use only what the task needs / 只启用任务所需能力" and "Never claim unavailable tools / 不假装工具可用". Use a white background, charcoal text, blue and green accents, amber for plugins/tools. No brand logos, no watermarks, no clutter.
 ```
