@@ -1,6 +1,10 @@
+<p align="right">
+  <strong>English</strong> | <a href="README.zh-CN.md">中文</a>
+</p>
+
 # ALL-IN-ONE Skill
 
-![ALL-IN-ONE routing tutorial](assets/all-in-one-routing-tutorial.png)
+![ALL-IN-ONE routing tutorial](assets/all-in-one-routing-tutorial-en.png)
 
 ALL-IN-ONE is a lightweight skill router for AI coding agents. It helps an agent inspect the current task, choose the smallest useful set of skills, plugins, connectors, and MCP tools, then act under the active system, developer, user, and project instructions.
 
