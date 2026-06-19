@@ -6,8 +6,17 @@
 
 Copy the skill into your user skills directory:
 
+Windows PowerShell:
+
 ```powershell
 Copy-Item -Recurse -Force .\skills\ALL-IN-ONE "$HOME\.agents\skills\ALL-IN-ONE"
+```
+
+macOS/Linux:
+
+```bash
+mkdir -p ~/.agents/skills
+cp -R skills/ALL-IN-ONE ~/.agents/skills/ALL-IN-ONE
 ```
 
 ### 2. Start a Task
@@ -30,7 +39,17 @@ The agent should identify the task type, select relevant skills/tools, and avoid
 | Generate an image | image generation/editing |
 | Use a missing plugin | discover candidates first; request install only for an exact explicit request |
 
-### 4. Regenerate the Tutorial Images
+### 4. Validate
+
+Run the static validator before publishing changes:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/validate-skill.ps1
+```
+
+See [test matrix](test-matrix.md) and [optimization notes](optimization-notes.md) for v2 maintenance guidance.
+
+### 5. Regenerate the Tutorial Images
 
 The repository uses one English image and one Simplified Chinese image.
 
@@ -52,8 +71,17 @@ Create a clean flat Simplified Chinese-only tutorial infographic for a skill nam
 
 复制技能目录到用户级 skills 目录：
 
+Windows PowerShell：
+
 ```powershell
 Copy-Item -Recurse -Force .\skills\ALL-IN-ONE "$HOME\.agents\skills\ALL-IN-ONE"
+```
+
+macOS/Linux：
+
+```bash
+mkdir -p ~/.agents/skills
+cp -R skills/ALL-IN-ONE ~/.agents/skills/ALL-IN-ONE
 ```
 
 ### 2. 开始任务
@@ -75,3 +103,17 @@ Agent 应该识别任务类型，选择相关能力，并避免加载无关能�
 | 创建新技能 | writing-skills、test-driven-development |
 | 生成图片 | 图片生成/编辑 |
 | 使用未安装插件 | 先发现候选；只有用户明确指定且候选存在时才请求安装 |
+
+### 4. 验证
+
+发布变更前运行静态校验：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/validate-skill.ps1
+```
+
+参见 [测试矩阵](test-matrix.md) 和 [优化说明](optimization-notes.md)。
+
+### 5. 重新生成教程图
+
+本仓库使用一张英文配图和一张简体中文配图。重新生成图片时，使用上方 English section 中的两个 prompt。

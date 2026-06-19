@@ -11,6 +11,12 @@ Capability router for the current task. Select the smallest relevant set of skil
 
 Core rule: route first, then act. Never claim a skill, plugin, connector, or tool is available until the runtime exposes it.
 
+## When to Use
+
+Use when a task may need more than one capability, an explicit skill/plugin/app is mentioned, or the correct tool path is not obvious.
+
+Do not use for trivial single-step answers, simple shell lookups, or tasks where a higher-priority instruction already names the exact skill or tool.
+
 ## Routing Contract
 
 1. Identify the goal, explicit mentions, files, apps, plugins, current mode, repo context, and higher-priority constraints.
@@ -26,8 +32,16 @@ Core rule: route first, then act. Never claim a skill, plugin, connector, or too
    - Reports/dashboards/charts: data analytics and artifact tools.
    - Images/video/design: image, Canva, Figma, creative production, HeyGen, invideo, HyperFrames.
    - Web apps/deployments: frontend, Next.js, Vercel, Supabase, Stripe.
-4. For plugins, connectors, and MCP tools, discover with runtime mechanisms such as `tool_search` before use. Request plugin installation only for an exact user request and an available candidate.
+4. Discover plugins, connectors, and MCP tools before use. Request plugin installation only for an exact user request and an available candidate.
 5. Announce selected capabilities briefly, then follow their instructions exactly. If none match, say so and use base tools.
+
+## Runtime Discovery
+
+| Runtime | Discovery path |
+|---|---|
+| Codex | Use `tool_search` for deferred plugin, connector, and MCP tools. |
+| Claude/Copilot/Gemini | Use the runtime's native skill/plugin activation or discovery tool. |
+| Unknown | State the limitation and continue with exposed base tools. |
 
 ## Hard Limits
 
@@ -42,10 +56,10 @@ Core rule: route first, then act. Never claim a skill, plugin, connector, or too
 When using this skill, start with one concise status line:
 
 ```text
-Using ALL-IN-ONE to route this task: selected [capabilities] because [reason].
+Using ALL-IN-ONE to route this task: process=[...]; domain=[...]; tools=[...]; unavailable=[...]; reason=[...].
 ```
 
-Keep it short. If discovery fails, say what was unavailable and use the best safe fallback.
+Keep it short. Use `none` for empty slots. If discovery fails, say what was unavailable and use the best safe fallback.
 
 ## Validation Scenarios
 

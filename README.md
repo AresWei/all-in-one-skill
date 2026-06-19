@@ -20,10 +20,19 @@ It is not a full-context loader. Loading every skill or plugin would waste conte
 
 ## Install
 
-Copy the skill folder into your user skills directory:
+Copy the skill folder into your user skills directory.
+
+Windows PowerShell:
 
 ```powershell
 Copy-Item -Recurse -Force .\skills\ALL-IN-ONE "$HOME\.agents\skills\ALL-IN-ONE"
+```
+
+macOS/Linux:
+
+```bash
+mkdir -p ~/.agents/skills
+cp -R skills/ALL-IN-ONE ~/.agents/skills/ALL-IN-ONE
 ```
 
 Expected layout:
@@ -61,7 +70,15 @@ ALL-IN-ONE does not:
 
 - [Chinese README](README.zh-CN.md)
 - [Bilingual usage guide](docs/usage.md)
+- [v2 optimization notes](docs/optimization-notes.md)
+- [Test matrix](docs/test-matrix.md)
 - [Skill source](skills/ALL-IN-ONE/SKILL.md)
+
+## Validate
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/validate-skill.ps1
+```
 
 ## License
 
